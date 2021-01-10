@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.5;
+}
+
+.container {
+  padding: 5px;
+
+  .home {
+    // border: solid 1px;
+
+    .title {
+      color: skyblue;
+    }
+
+    .fltAll {
+      background-color: white !important;
+    }
+
+    .search input {
+      border-radius: 20px;
+      height: 40px;
+    }
+
+    .games-container {
+      // border: solid;
+      margin: 20px;
+
+      // Position Attribute Icons
+      .Neon.Jungle-column,
+      .Hotline-column,
+      .Sea.of.Tranquility-column,
+      .Aloha.Cluster.Pays-column {
+        .high.limit {
+          position: absolute;
+          top: 0px;
+          right: 0px;
+          z-index: 2;
+        }
+
+        .new {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          z-index: 2;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 745px) {
+  .container {
+    padding: 80px;
+
+    .new-column {
+      margin: 5px;
+    }
+
+    .nav-menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+    }
+
+    .title {
+      text-align: left;
+      flex: 1;
+    }
+
+    .filters {
+      margin: 0 40px;
+
+      img {
+        padding: 0 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.5;
+}
+
+.container {
+  padding: 5px;
+}
+.container .home .title {
+  color: skyblue;
+}
+.container .home .fltAll {
+  background-color: white !important;
+}
+.container .home .search input {
+  border-radius: 20px;
+  height: 40px;
+}
+.container .home .games-container {
+  margin: 20px;
+}
+.container .home .games-container .Neon.Jungle-column .high.limit,
+.container .home .games-container .Hotline-column .high.limit,
+.container .home .games-container .Sea.of.Tranquility-column .high.limit,
+.container .home .games-container .Aloha.Cluster.Pays-column .high.limit {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 2;
+}
+.container .home .games-container .Neon.Jungle-column .new,
+.container .home .games-container .Hotline-column .new,
+.container .home .games-container .Sea.of.Tranquility-column .new,
+.container .home .games-container .Aloha.Cluster.Pays-column .new {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+}
+
+@media (min-width: 745px) {
+  .container {
+    padding: 80px;
+  }
+  .container .new-column {
+    margin: 5px;
+  }
+  .container .nav-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+  }
+  .container .title {
+    text-align: left;
+    flex: 1;
+  }
+  .container .filters {
+    margin: 0 40px;
+  }
+  .container .filters img {
+    padding: 0 10px;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */
