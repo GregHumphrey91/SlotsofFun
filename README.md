@@ -11,7 +11,7 @@ Open Your Terminal
 ### Copy and paste the following lines below into your terminal:
 
 ```bash
-git clone https://github.com/GregGains/SlotsofFun
+git clone https://github.com/GregHumphrey91/SlotsofFun
 ```
 
 ```bash
