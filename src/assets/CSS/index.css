@@ -3,69 +3,112 @@
 }
 
 body {
-  font-family: "Courier New", Courier, monospace;
   margin: 0 auto;
   text-align: center;
   padding: 20px;
-  font-size: 1.5;
 }
 
 .container {
   padding: 5px;
 }
-.container .home .title {
+.container .home .nav-menu .title {
   color: skyblue;
 }
-.container .home .fltAll {
-  background-color: white !important;
+.container .home .nav-menu .filters {
+  background-color: white;
+  cursor: pointer;
 }
-.container .home .search input {
+.container .home .nav-menu .filter-all-container,
+.container .home .nav-menu .filter-new-container,
+.container .home .nav-menu .filter-high-limit-container {
+  position: relative;
+}
+.container .home .nav-menu .filter-all-container .filter-all-hover,
+.container .home .nav-menu .filter-all-container .filter-new-hover,
+.container .home .nav-menu .filter-all-container .filter-top-hover,
+.container .home .nav-menu .filter-new-container .filter-all-hover,
+.container .home .nav-menu .filter-new-container .filter-new-hover,
+.container .home .nav-menu .filter-new-container .filter-top-hover,
+.container .home .nav-menu .filter-high-limit-container .filter-all-hover,
+.container .home .nav-menu .filter-high-limit-container .filter-new-hover,
+.container .home .nav-menu .filter-high-limit-container .filter-top-hover {
+  position: absolute;
+  top: 7px;
+  opacity: 0;
+}
+.container .home .nav-menu .active .filter-all,
+.container .home .nav-menu .active .filter-new,
+.container .home .nav-menu .active .filter-top {
+  opacity: 0;
+}
+.container .home .nav-menu .active .filter-all-hover,
+.container .home .nav-menu .active .filter-new-hover,
+.container .home .nav-menu .active .filter-top-hover {
+  opacity: 1;
+  transition: 0.1s;
+}
+.container .home .nav-menu .search input {
   border-radius: 20px;
   height: 40px;
 }
 .container .home .games-container {
-  margin: 20px;
+  margin: 0px;
+}
+.container .home .games-container .Neon.Jungle-column .new,
+.container .home .games-container .Neon.Jungle-column .high.limit,
+.container .home .games-container .Hotline-column .new,
+.container .home .games-container .Hotline-column .high.limit,
+.container .home .games-container .Sea.of.Tranquility-column .new,
+.container .home .games-container .Sea.of.Tranquility-column .high.limit,
+.container .home .games-container .Aloha.Cluster.Pays-column .new,
+.container .home .games-container .Aloha.Cluster.Pays-column .high.limit {
+  position: absolute;
+  z-index: 2;
 }
 .container .home .games-container .Neon.Jungle-column .high.limit,
 .container .home .games-container .Hotline-column .high.limit,
 .container .home .games-container .Sea.of.Tranquility-column .high.limit,
 .container .home .games-container .Aloha.Cluster.Pays-column .high.limit {
-  position: absolute;
   top: 0px;
   right: 0px;
-  z-index: 2;
 }
 .container .home .games-container .Neon.Jungle-column .new,
 .container .home .games-container .Hotline-column .new,
 .container .home .games-container .Sea.of.Tranquility-column .new,
 .container .home .games-container .Aloha.Cluster.Pays-column .new {
-  position: absolute;
   top: 10px;
   left: 10px;
-  z-index: 2;
 }
 
 @media (min-width: 745px) {
   .container {
-    padding: 80px;
-  }
-  .container .new-column {
-    margin: 5px;
+    padding: 50px;
   }
   .container .nav-menu {
     display: flex;
     flex-direction: row;
-    justify-content: start;
   }
-  .container .title {
+  .container .nav-menu .title {
     text-align: left;
     flex: 1;
   }
-  .container .filters {
-    margin: 0 40px;
+  .container .nav-menu .search {
+    margin-left: 50px;
   }
-  .container .filters img {
-    padding: 0 10px;
+  .container .games-container {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, 216px);
+    grid-auto-rows: 216px;
+    width: 100%;
+  }
+  .container .games-container .Jumanji-column,
+.container .games-container .Hit.Pay-column {
+    grid-column: span 2;
+    grid-row: span 2;
+    box-shadow: none;
+    width: 465px;
+    height: 465px;
   }
 }
 

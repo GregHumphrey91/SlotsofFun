@@ -3,53 +3,80 @@
 }
 
 body {
-  font-family: "Courier New", Courier, monospace;
   margin: 0 auto;
   text-align: center;
   padding: 20px;
-  font-size: 1.5;
 }
 
 .container {
   padding: 5px;
 
   .home {
-    // border: solid 1px;
+    .nav-menu {
+      .title {
+        color: skyblue;
+      }
 
-    .title {
-      color: skyblue;
-    }
+      .filters {
+        background-color: white;
+        cursor: pointer;
+      }
 
-    .fltAll {
-      background-color: white !important;
-    }
+      .filter-all-container,
+      .filter-new-container,
+      .filter-high-limit-container {
+        position: relative;
 
-    .search input {
-      border-radius: 20px;
-      height: 40px;
+        .filter-all-hover,
+        .filter-new-hover,
+        .filter-top-hover {
+          position: absolute;
+          top: 7px;
+          opacity: 0;
+        }
+      }
+
+      .active .filter-all,
+      .active .filter-new,
+      .active .filter-top {
+        opacity: 0;
+      }
+
+      .active .filter-all-hover,
+      .active .filter-new-hover,
+      .active .filter-top-hover {
+        opacity: 1;
+        transition: 0.1s;
+      }
+
+      .search input {
+        border-radius: 20px;
+        height: 40px;
+      }
     }
 
     .games-container {
-      // border: solid;
-      margin: 20px;
+      margin: 0px;
 
       // Position Attribute Icons
       .Neon.Jungle-column,
       .Hotline-column,
       .Sea.of.Tranquility-column,
       .Aloha.Cluster.Pays-column {
+        .new,
         .high.limit {
           position: absolute;
-          top: 0px;
-          right: 0px;
           z-index: 2;
         }
 
+        .high.limit {
+          top: 0px;
+          right: 0px;
+        }
+
         .new {
-          position: absolute;
           top: 10px;
           left: 10px;
-          z-index: 2;
         }
       }
     }
@@ -58,28 +85,36 @@ body {
 
 @media (min-width: 745px) {
   .container {
-    padding: 80px;
-
-    .new-column {
-      margin: 5px;
-    }
+    padding: 50px;
 
     .nav-menu {
       display: flex;
       flex-direction: row;
-      justify-content: start;
+
+      .title {
+        text-align: left;
+        flex: 1;
+      }
+
+      .search {
+        margin-left: 50px;
+      }
     }
 
-    .title {
-      text-align: left;
-      flex: 1;
-    }
+    .games-container {
+      display: grid;
+      gap: 15px;
+      grid-template-columns: repeat(auto-fill, 216px);
+      grid-auto-rows: 216px;
+      width: 100%;
 
-    .filters {
-      margin: 0 40px;
-
-      img {
-        padding: 0 10px;
+      .Jumanji-column,
+      .Hit.Pay-column {
+        grid-column: span 2;
+        grid-row: span 2;
+        box-shadow: none;
+        width: 465px;
+        height: 465px;
       }
     }
   }

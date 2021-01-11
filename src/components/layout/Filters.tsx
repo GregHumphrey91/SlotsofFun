@@ -1,26 +1,46 @@
 import React from "react";
 import { Image, Label } from "semantic-ui-react";
-import allIcon from "../../assets/Img/Icons/filter/all.png";
-import newIcon from "../../assets/Img/Icons/filter/new.png";
-import topIcon from "../../assets/Img/Icons/filter/top.png";
+import {
+  allIcon,
+  allHover,
+  newIcon,
+  newHover,
+  topIcon,
+  topHover,
+} from "../common/FilterIcons";
 
-const Filters = ({ setFilter }: any) => {
+import { FilterProps } from "../../interfaces/NavigationProps.interface";
+
+const Filters = ({ filter, setFilter }: FilterProps) => {
   return (
-    <div className='filters'>
-      <Label.Group>
-        <Label className='fltAll' onClick={() => setFilter("all")}>
-          <Image className='filter-all' src={allIcon} size='huge' />
-        </Label>
+    <Label.Group>
+      <Label
+        className='filters filter-all-container'
+        onClick={() => setFilter("all")}
+        active={filter === "all" ? true : false}
+      >
+        <Image className='filter-all' src={allIcon} size='huge' />
+        <Image className='filter-all-hover' src={allHover} size='huge' />
+      </Label>
 
-        <Label className='fltAll' onClick={() => setFilter("new")}>
-          <Image className='filter-new' src={newIcon} size='huge' />
-        </Label>
+      <Label
+        className='filters filter-new-container'
+        onClick={() => setFilter("new")}
+        active={filter === "new" ? true : false}
+      >
+        <Image className='filter-new' src={newIcon} size='huge' />
+        <Image className='filter-new-hover' src={newHover} size='huge' />
+      </Label>
 
-        <Label className='fltAll' onClick={() => setFilter("high limit")}>
-          <Image className='filter-top' src={topIcon} size='huge' />
-        </Label>
-      </Label.Group>
-    </div>
+      <Label
+        className='filters filter-high-limit-container'
+        onClick={() => setFilter("high limit")}
+        active={filter === "high limit" ? true : false}
+      >
+        <Image className='filter-top' src={topIcon} size='huge' />
+        <Image className='filter-top-hover' src={topHover} size='huge' />
+      </Label>
+    </Label.Group>
   );
 };
 

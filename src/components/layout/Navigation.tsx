@@ -1,9 +1,18 @@
 import React from "react";
 import { Input, Icon } from "semantic-ui-react";
+import {
+  FilterProps,
+  SearchProps,
+} from "../../interfaces/NavigationProps.interface";
 import Filters from "./Filters";
 
-const Navigation = ({ search, setSearch, setFilter }: any) => {
-  const onChange = (e: any) => {
+const Navigation = ({
+  search,
+  setSearch,
+  filter,
+  setFilter,
+}: FilterProps & SearchProps) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFilter("");
     setSearch(e.target.value);
   };
@@ -12,7 +21,7 @@ const Navigation = ({ search, setSearch, setFilter }: any) => {
     <div className='nav-menu'>
       <h1 className='title'>SLOTS</h1>
 
-      <Filters setFilter={setFilter} />
+      <Filters filter={filter} setFilter={setFilter} />
 
       <Input
         className='search'
